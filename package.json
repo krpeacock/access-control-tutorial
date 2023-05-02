@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite src/frontend",
     "build": "vite build src/frontend"
   },
   "keywords": [],
@@ -12,7 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "@dfinity/ii-login-button": "^0.0.3",
-    "vite": "^4.3.4"
+    "dotenv": "^16.0.3",
+    "vite": "^4.3.4",
+    "vite-plugin-environment": "^1.1.3"
   },
   "dependencies": {
     "@dfinity/agent": "^0.15.6",
