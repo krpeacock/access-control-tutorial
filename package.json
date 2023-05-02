@@ -1,0 +1,23 @@
+{
+  "name": "access-control-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build src/frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@dfinity/ii-login-button": "^0.0.3",
+    "vite": "^4.3.4"
+  },
+  "dependencies": {
+    "@dfinity/agent": "^0.15.6",
+    "@dfinity/candid": "^0.15.6",
+    "@dfinity/identity": "^0.15.6",
+    "@dfinity/principal": "^0.15.6"
+  }
+}
