@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vite src/frontend",
-    "build": "vite build src/frontend"
+    "start": "vite src/frontend --config vite.config.js",
+    "sources": "mops sources",
+    "build": "vite build src/frontend --config vite.config.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@dfinity/ii-login-button": "^0.0.3",
     "dotenv": "^16.0.3",
+    "ic-mops": "^0.12.1",
     "vite": "^4.3.4",
     "vite-plugin-environment": "^1.1.3"
   },

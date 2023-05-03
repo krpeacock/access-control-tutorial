@@ -4,6 +4,8 @@ import EnvironmentPlugin from "vite-plugin-environment";
 import dotenv from "dotenv";
 dotenv.config();
 
+console.log("backend: ", process.env.CANISTER_ID_BACKEND);
+
 export default defineConfig({
   root: path.resolve(__dirname, "src", "frontend"),
   build: {

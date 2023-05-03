@@ -30,7 +30,7 @@
     "defaults": {
         "build": {
             "args": "",
-            "packtool": "mops sources"
+            "packtool": "npm run --silent sources"
         }
     },
     "output_env_file": ".env"
