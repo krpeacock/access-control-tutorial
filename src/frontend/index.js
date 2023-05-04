@@ -6,6 +6,7 @@ const main = async () => {
   setupListeners();
   prepareLoginBotton(render);
   renderTable();
+  poll();
 };
 
 document.addEventListener("DOMContentLoaded", main);
@@ -62,8 +63,9 @@ const getCount = async () => {
 const renderTable = async (data) => {
   const counts = JSON.parse(await default_backend_actor.getCounts());
   counts.forEach(({ principal, count }) => {
-    if (document.querySelector(`#${principal}`)) {
-      document.querySelector(`#${principal} td:nth-child(2)`).innerText = count;
+    const existingRow = document.getElementById(principal);
+    if (existingRow) {
+      existingRow.querySelector(`td:nth-child(2)`).innerText = count;
       return;
     }
     const row = document.createElement("tr");
@@ -76,7 +78,6 @@ const renderTable = async (data) => {
     row.appendChild(countCell);
     document.querySelector("#table tbody")?.appendChild(row);
   });
-  console.log(counts);
 };
 
 function increment() {
@@ -87,4 +88,11 @@ function increment() {
       document.querySelector("#count").innerHTML = count;
       renderTable();
     });
+}
+
+function poll() {
+  setInterval(() => {
+    getCount();
+    renderTable();
+  }, 5000);
 }
