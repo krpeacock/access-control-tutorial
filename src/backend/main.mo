@@ -25,7 +25,7 @@ shared ({ caller }) actor class () {
     principal : Principal;
     count : Nat;
   };
-  public func getCounts() : async Text {
+  public query func getCounts() : async Text {
     var entries = Buffer.fromArray<JSON.JSON>([]);
     for ((principal, count) in Map.entries(counts)) {
       entries.add(
@@ -36,6 +36,13 @@ shared ({ caller }) actor class () {
       );
     };
     JSON.show(#Array(Buffer.toArray(entries)));
+  };
+
+  public shared query ({ caller }) func myCount() : async Nat {
+    switch (Map.get(counts, phash, caller)) {
+      case (null) { 0 };
+      case (?n) { n };
+    };
   };
 
 };

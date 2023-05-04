@@ -8,33 +8,37 @@
     <title>Access Control</title>
   </head>
   <body>
-    <h1>Access Control</h1>
-    <p>
-      This is an interactive website. Use the form below to get a password-based
-      identity, or login using the login button. You will then be able to check
-      your identity, or you can increment your principal's counter! Can you get
-      the high score?
-    </p>
-    <form id="form">
-      <label for="secret">Secret:</label>
-      <input type="password" id="secret" name="secret" />
-      <input type="submit" value="Submit" />
-    </form>
-    <div id="output"></div>
-    <ii-login-button></ii-login-button>
+    <main>
+      <h1>Access Control</h1>
+      <p>
+        This is an interactive website. Use the form below to get a
+        password-based identity, or login using the login button. You will then
+        be able to check your identity, or you can increment your principal's
+        counter! Can you get the high score?
+      </p>
+      <form id="form">
+        <label for="secret">Secret:</label>
+        <input type="password" id="secret" name="secret" />
+      </form>
+      <div id="output"></div>
+      <ii-login-button></ii-login-button>
 
-    <button type="button" id="increment">Increment</button>
-    <div id="count"></div>
+      <button type="button" id="increment" disabled>Increment</button>
+      <section id="click-counter">
+        <p>Your clicks:</p>
+        <div id="count"></div>
+      </section>
 
-    <table id="table">
-      <thead>
-        <tr>
-          <th>Principal</th>
-          <th>count</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Principal</th>
+            <th>count</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
     <script src="index.js" type="module"></script>
   </body>
 </html>
