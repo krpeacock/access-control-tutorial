@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vite src/frontend --config vite.config.js",
+    "dev": "vite src/frontend --config vite.config.js",
+    "start": "npm run dev",
     "sources": "mops sources",
     "build": "vite build src/frontend --config vite.config.js"
   },
